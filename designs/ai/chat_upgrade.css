@@ -1,0 +1,1405 @@
+
+/* ==========================================
+   SNAP CHAT UPGRADE — PROFESSIONAL UI
+========================================== */
+
+.snap-social-header-new,
+.snap-social-header-info {
+    appearance: none;
+    border: 1px solid #d9e4f3;
+    background: #ffffff;
+    color: #192bea;
+    border-radius: 12px;
+    padding: 9px 14px;
+    font: 700 13px/1.3 Arial, sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.snap-social-header-new:hover,
+.snap-social-header-info:hover {
+    background: #eff5ff;
+}
+
+.snap-social-header-info {
+    margin-left: auto;
+}
+
+/* STATUS AND ERRORS */
+
+.snap-social-notice {
+    margin: 12px 0;
+    padding: 11px 15px;
+    border: 1px solid #badacd;
+    border-radius: 12px;
+    color: #187d55;
+    background: #f0fff7;
+    font-size: 13px;
+}
+
+.snap-social-notice[hidden] {
+    display: none;
+}
+
+.snap-social-notice[data-error="true"] {
+    color: #b82d39;
+    background: #fff1f1;
+    border-color: #ecc4c4;
+}
+
+.snap-social-toast {
+    position: fixed;
+    z-index: 1200;
+    right: 22px;
+    bottom: 22px;
+    max-width: min(420px, calc(100vw - 32px));
+    margin: 0;
+    padding: 13px 17px;
+    border: 1px solid #c9d8ec;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(22, 39, 66, .18);
+    color: #26364b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.snap-social-toast[data-error="true"] {
+    border-color: #edc5c8;
+    background: #fff5f5;
+    color: #9f2f3c;
+}
+
+/* MODALS */
+
+.snap-social-dialog {
+    width: min(94vw, 560px);
+    max-height: min(88dvh, 790px);
+    padding: 0;
+    border: 1px solid #e4ebf5;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 25px 90px rgba(22, 39, 66, .25);
+    color: #182334;
+    overflow: auto;
+}
+
+.snap-social-dialog::backdrop {
+    background: rgba(15, 24, 38, .5);
+    backdrop-filter: blur(3px);
+}
+
+.snap-social-dialog > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 22px 24px 12px;
+}
+
+.snap-social-dialog h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -.3px;
+}
+
+.snap-social-close {
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 10px;
+    background: #f3f6fa;
+    color: #475365;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.snap-social-lede {
+    padding: 0 24px;
+    margin: 3px 0 17px;
+    color: #657385;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.snap-social-confirm-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0 24px 24px;
+}
+
+.snap-social-confirm-status,
+.snap-social-confirm-error {
+    margin: 0 24px 12px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.snap-social-confirm-status {
+    color: #657385;
+}
+
+.snap-social-confirm-error {
+    color: #b82d39;
+}
+
+.snap-social-confirm-actions button {
+    min-height: 42px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font: 700 13px/1.2 Arial, sans-serif;
+    cursor: pointer;
+    transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.snap-social-confirm-actions button:hover {
+    transform: translateY(-1px);
+}
+
+.snap-social-confirm-cancel {
+    border-color: #d9e2ee !important;
+    background: #f5f8fc !important;
+    color: #43536a !important;
+}
+
+.snap-social-confirm-cancel:hover {
+    background: #eaf0f8 !important;
+}
+
+.snap-social-confirm-primary {
+    background: #2857aa !important;
+    color: #fff !important;
+}
+
+.snap-social-confirm-primary:hover {
+    background: #214990 !important;
+}
+
+.snap-social-confirm-danger {
+    background: #b83d4b !important;
+    color: #fff !important;
+}
+
+.snap-social-confirm-danger:hover {
+    background: #9f2f3c !important;
+}
+
+.snap-social-dialog:focus-visible,
+.snap-social-confirm-actions button:focus-visible {
+    outline: 3px solid rgba(70, 124, 207, .4);
+    outline-offset: 3px;
+}
+
+/* START SOMETHING NEW MENU */
+
+.snap-social-choices {
+    display: grid;
+    gap: 5px;
+    padding: 10px 16px 21px;
+}
+
+.snap-social-choice {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 75px;
+    gap: 14px;
+    padding: 12px;
+    border: 0;
+    border-radius: 14px;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+}
+
+.snap-social-choice:hover,
+.snap-social-choice:focus-visible {
+    background: #f1f6ff;
+    outline: none;
+}
+
+.snap-social-choice-icon {
+    flex: 0 0 51px;
+    display: grid;
+    place-items: center;
+    height: 51px;
+    border-radius: 15px;
+    background: #edf2ff;
+    color: #2025e8;
+    font-size: 23px;
+}
+
+.snap-social-choice > span:nth-child(2) {
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    gap: 4px;
+}
+
+.snap-social-choice strong {
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.snap-social-choice small {
+    color: #6d7988;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.snap-social-choice > span:last-child {
+    color: #7d8a9c;
+    font-size: 26px;
+}
+
+/* FORMS AND INVITATION LINKS */
+
+.snap-social-form {
+    display: grid;
+    gap: 12px;
+    padding: 0 24px 24px;
+}
+
+.snap-social-form input,
+.snap-social-link {
+    box-sizing: border-box;
+    display: block;
+    width: calc(100% - 48px);
+    margin: 0 24px 12px;
+    padding: 12px;
+    border: 1px solid #d4dfec;
+    border-radius: 11px;
+    background: #f9fbff;
+    color: #243145;
+    font-size: 13px;
+}
+
+.snap-social-form input {
+    width: 100%;
+    margin: 0;
+}
+
+.snap-social-form button,
+.snap-social-primary {
+    padding: 13px 17px;
+    border: 0;
+    border-radius: 12px;
+    background: #1e26f0;
+    color: white;
+    font: 700 14px/1.3 Arial, sans-serif;
+    cursor: pointer;
+}
+
+.snap-social-primary {
+    display: block;
+    width: calc(100% - 48px);
+    margin: 0 24px 21px;
+}
+
+.snap-social-warning {
+    margin: 0 24px 20px;
+    padding: 10px 13px;
+    border-radius: 10px;
+    background: #fff9e8;
+    color: #99620e;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.snap-social-error {
+    margin: 0;
+    color: #c43745;
+    font-size: 12px;
+}
+
+.ai-hub-page .ai-icon-direct svg {
+    width: 25px;
+    height: 25px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* CONVERSATION INFO */
+
+.snap-social-info {
+    display: grid;
+    gap: 19px;
+    padding: 10px 24px 24px;
+}
+
+.snap-social-room-banner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    background: #f5f8fd;
+}
+
+.snap-social-room-avatar {
+    flex: 0 0 67px;
+    display: grid;
+    place-items: center;
+    height: 67px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #e6eeff;
+    color: #2a47d9;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.snap-social-room-avatar img,
+.snap-room-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.snap-social-room-banner strong {
+    display: block;
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+.snap-social-room-banner small {
+    display: block;
+    margin-top: 5px;
+    color: #738091;
+    font-size: 13px;
+}
+
+.snap-social-info h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.snap-social-info-tools {
+    display: grid;
+    gap: 9px;
+    padding: 15px;
+    border: 1px solid #e2eaf3;
+    border-radius: 15px;
+    background: #f8fafe;
+}
+
+.snap-social-info-tools button {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 14px;
+    border: 1px solid #cbd6e5;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #2534ca;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.snap-social-info-tools button:hover {
+    background: #edf2ff;
+}
+
+.snap-social-info-tools button:focus-visible,
+.snap-social-rename-form input:focus-visible {
+    outline: 3px solid rgba(54, 95, 235, .24);
+    outline-offset: 2px;
+}
+
+.snap-social-info-tools button:disabled {
+    opacity: .68;
+    cursor: wait;
+}
+
+.snap-social-rename-form {
+    display: grid;
+    gap: 9px;
+    padding: 14px;
+    border: 1px solid #dce5f1;
+    border-radius: 13px;
+    background: #ffffff;
+}
+
+.snap-social-rename-form[hidden] {
+    display: none;
+}
+
+.snap-social-field-label {
+    color: #29364a;
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.snap-social-rename-form input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #cbd6e5;
+    border-radius: 10px;
+    background: #f9fbff;
+    color: #1d2a3d;
+    font: inherit;
+}
+
+.snap-social-field-hint {
+    color: #78869a;
+    font-size: 12px;
+}
+
+.snap-social-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 5px;
+}
+
+.snap-social-info-tools .snap-social-form-actions button {
+    width: auto;
+    min-width: 100px;
+    min-height: 40px;
+}
+
+.snap-social-info-tools .snap-social-secondary {
+    border-color: #d7e0ec;
+    background: #ffffff;
+    color: #4a5870;
+}
+
+.snap-social-info-tools .snap-social-form-actions .snap-social-primary {
+    border-color: transparent;
+    background: #284be8;
+    color: #ffffff;
+}
+
+.snap-social-info-tools .snap-social-form-actions .snap-social-primary:hover {
+    background: #1d3bc5;
+}
+
+.snap-social-photo-preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid #dce5f1;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.snap-social-photo-preview[hidden] {
+    display: none;
+}
+
+.snap-social-photo-preview img {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: #e8eef8;
+}
+
+.snap-social-photo-preview span {
+    min-width: 0;
+    color: #4e5e73;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.snap-social-photo-progress {
+    width: 100%;
+    height: 6px;
+    accent-color: #3156e8;
+}
+
+.snap-social-photo-progress[hidden] {
+    display: none;
+}
+
+.snap-social-toggle {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #455268;
+    font-size: 13px;
+}
+
+.snap-social-toggle input {
+    width: 17px;
+    height: 17px;
+}
+
+.snap-social-participants {
+    display: grid;
+    gap: 8px;
+}
+
+.snap-social-person {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 10px;
+    border-radius: 12px;
+    background: #f6f8fc;
+}
+
+.snap-social-person-avatar {
+    flex: 0 0 37px;
+    display: grid;
+    place-items: center;
+    height: 37px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #e9efff;
+    color: #2b4bd7;
+    font-weight: 800;
+}
+
+.snap-social-person-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.snap-social-person > span:nth-child(2) {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.snap-social-person small {
+    color: #8793a3;
+    font-size: 12px;
+}
+
+.snap-social-room-photo-description {
+    display: grid;
+    gap: 5px;
+}
+
+.snap-social-room-photo-description strong {
+    font-size: 16px;
+}
+
+.snap-social-room-photo-description small {
+    color: #738091;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.snap-social-chat-actions {
+    display: grid;
+    gap: 11px;
+    padding-top: 20px;
+    border-top: 1px solid #d7dfe9;
+}
+
+.snap-social-chat-actions p {
+    margin: -4px 0 3px;
+    color: #748093;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.snap-social-chat-actions button {
+    width: 100%;
+    min-height: 44px;
+    border-radius: 999px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.snap-social-chat-actions .snap-social-danger-outline {
+    border: 1px solid #bd4d55;
+    color: #a93640;
+}
+
+.snap-social-chat-actions .snap-social-danger {
+    border: 1px solid transparent;
+    color: #a93640;
+}
+
+.snap-social-chat-actions button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.message-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 4px;
+}
+
+.message-author-avatar {
+    display: grid;
+    flex: 0 0 30px;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #e9efff;
+    color: #2b4bd7;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.message-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message-author .message-sender {
+    margin: 0;
+}
+
+/* CHAT IMAGES AND REACTIONS */
+
+.snap-social-image-button {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #c4cede;
+    border-radius: 50%;
+    background: white;
+    color: #2234d5;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.snap-message-image {
+    display: block;
+    max-width: min(100%, 340px);
+    max-height: 320px;
+    object-fit: contain;
+    margin-top: 7px;
+    border-radius: 12px;
+    cursor: zoom-in;
+}
+
+.snap-message-reactions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 6px 0 0;
+}
+
+.snap-message-reactions button {
+    padding: 4px 8px;
+    border: 1px solid #c8d8ec;
+    border-radius: 999px;
+    background: #eaf1fa;
+    color: #263b56;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease;
+}
+
+.snap-message-reactions button:hover,
+.snap-message-reactions button:focus-visible {
+    background: #dce9f8;
+    border-color: #a9c2e2;
+}
+
+.snap-reaction-picker {
+    position: absolute;
+    z-index: 5;
+    bottom: calc(100% + 8px);
+    left: 0;
+    display: flex;
+    gap: 3px;
+    padding: 6px;
+    border: 1px solid rgba(176, 193, 214, .8);
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(34, 52, 77, .2);
+}
+
+.snap-reaction-picker button {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    font-size: 19px;
+    transition: background 120ms ease, transform 120ms ease;
+}
+
+.snap-reaction-picker button:hover,
+.snap-reaction-picker button:focus-visible {
+    transform: scale(1.12);
+    background: #edf3fb;
+}
+
+.snap-message-reactions button[aria-pressed="true"] {
+    background: #e7eeff;
+    border-color: #99b3ff;
+}
+
+.snap-message-reactions .snap-message-reaction-add {
+    color: #667792;
+    font-size: 12px;
+}
+
+.thread-header .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* RECENT CONVERSATIONS */
+
+.snap-social-recent-heading {
+    margin: 22px 0 10px;
+    color: #273246;
+    font-size: 15px;
+}
+
+.snap-social-recent-list {
+    display: grid;
+    gap: 9px;
+}
+
+.snap-social-recent-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    padding: 10px 15px;
+    border: 1px solid #dde7f3;
+    border-radius: 13px;
+    background: white;
+    color: inherit;
+    text-decoration: none;
+}
+
+.snap-social-recent-item:hover {
+    background: #f5f9ff;
+    border-color: #b5caff;
+}
+
+.snap-social-recent-item > span:first-child {
+    flex: 0 0 39px;
+    display: grid;
+    place-items: center;
+    height: 39px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #e9efff;
+    color: #2551d0;
+    font-weight: 800;
+}
+
+.snap-social-recent-item > span:first-child img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.snap-social-recent-item > span:nth-child(2) {
+    flex: 1;
+    display: grid;
+    min-width: 0;
+    gap: 4px;
+}
+
+.snap-social-recent-item strong,
+.snap-social-recent-item small {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.snap-social-recent-item strong {
+    font-size: 13px;
+}
+
+.snap-social-recent-item small {
+    color: #738198;
+    font-size: 12px;
+}
+
+.snap-social-recent-item > span:last-child {
+    color: #8a96a9;
+    font-size: 25px;
+}
+
+/* DARK MODE */
+
+html[data-theme="dark"] .snap-social-dialog {
+    background: #1c2738;
+    color: #e6eef9;
+    border-color: #42516a;
+}
+
+html[data-theme="dark"] .snap-social-warning {
+    border: 1px solid #715d35;
+    background: #352f22;
+    color: #f3d48f;
+}
+
+html[data-theme="dark"] .snap-social-confirm-cancel {
+    border-color: #40516a !important;
+    background: #26374b !important;
+    color: #dbe6f5 !important;
+}
+
+html[data-theme="dark"] .snap-social-confirm-cancel:hover {
+    background: #30445e !important;
+}
+
+html[data-theme="dark"] .snap-social-confirm-danger {
+    background: #a63d49 !important;
+    color: #fff !important;
+}
+
+html[data-theme="dark"] .snap-social-confirm-danger:hover {
+    background: #bd4d59 !important;
+}
+
+html[data-theme="dark"] .snap-social-confirm-status {
+    color: #b6c3d4;
+}
+
+html[data-theme="dark"] .snap-social-confirm-error {
+    color: #ffc2c8;
+}
+
+html[data-theme="dark"] .snap-social-toast {
+    border-color: #40516a;
+    background: #1c2738;
+    color: #e6eef9;
+}
+
+html[data-theme="dark"] .snap-social-toast[data-error="true"] {
+    border-color: #74404e;
+    background: #3b2631;
+    color: #ffc2c8;
+}
+
+html[data-theme="dark"] .snap-social-notice {
+    border-color: #3f6959;
+    background: #1d342c;
+    color: #a9e3c8;
+}
+
+html[data-theme="dark"] .snap-social-notice[data-error="true"] {
+    border-color: #74404e;
+    background: #3b2631;
+    color: #ffc2c8;
+}
+
+html[data-theme="dark"] .chats-error {
+    border-color: #74404e;
+    background: #3b2631;
+    color: #ffc2c8;
+}
+
+html[data-theme="dark"] .snap-social-choice:hover,
+html[data-theme="dark"] .snap-social-info-tools {
+    background: #26374b;
+}
+
+html[data-theme="dark"] .snap-social-room-banner,
+html[data-theme="dark"] .snap-social-person {
+    background: #29384d;
+}
+
+html[data-theme="dark"] .snap-social-info-tools {
+    border-color: #40516a;
+}
+
+html[data-theme="dark"] .snap-social-rename-form,
+html[data-theme="dark"] .snap-social-photo-preview {
+    border-color: #40516a;
+    background: #202e42;
+}
+
+html[data-theme="dark"] .snap-social-field-label {
+    color: #e6eef9;
+}
+
+html[data-theme="dark"] .snap-social-field-hint,
+html[data-theme="dark"] .snap-social-photo-preview span {
+    color: #b6c3d4;
+}
+
+html[data-theme="dark"] .snap-social-info-tools .snap-social-secondary {
+    border-color: #40516a;
+    background: #26374b;
+    color: #dbe6f5;
+}
+
+html[data-theme="dark"] .snap-social-rename-form input {
+    border-color: #405471;
+    background: #203046;
+    color: #e6eef9;
+}
+
+html[data-theme="dark"] .snap-social-info-tools button,
+html[data-theme="dark"] .snap-social-link,
+html[data-theme="dark"] .snap-social-form input {
+    background: #203046;
+    color: #e6eef9;
+    border-color: #405471;
+}
+
+html[data-theme="dark"] .snap-social-info-tools button:hover {
+    background: #30445e;
+}
+
+html[data-theme="dark"] .snap-social-room-photo-description small,
+html[data-theme="dark"] .snap-social-person small,
+html[data-theme="dark"] .snap-social-chat-actions p {
+    color: #b6c3d4;
+}
+
+html[data-theme="dark"] .snap-social-chat-actions {
+    border-color: #40516a;
+}
+
+html[data-theme="dark"] .snap-social-chat-actions .snap-social-danger,
+html[data-theme="dark"] .snap-social-chat-actions .snap-social-danger-outline {
+    color: #ff9a9f;
+}
+
+html[data-theme="dark"] .message-row.incoming .message-bubble {
+    background: #29384d;
+    color: #f1f5fb !important;
+}
+
+html[data-theme="dark"] .message-bubble-audio-only {
+    background: transparent !important;
+}
+
+html[data-theme="dark"] .message-bubble-image-only {
+    background: transparent !important;
+}
+
+html[data-theme="dark"] .voice-message-player,
+html[data-theme="dark"] .audio-composer-preview,
+html[data-theme="dark"] .attachment-composer-preview {
+    border-color: #40516a;
+    background: #202e42;
+}
+
+html[data-theme="dark"] .attachment-composer-preview > img {
+    background: #34445b;
+}
+
+html[data-theme="dark"] .attachment-preview-file-icon {
+    border-color: #394b66;
+    background: #1c2a3e;
+    color: #c4d2e6;
+}
+
+html[data-theme="dark"] .attachment-preview-content strong {
+    color: #d7e2f0;
+}
+
+html[data-theme="dark"] .attachment-preview-content small {
+    color: #b6c3d4;
+}
+
+html[data-theme="dark"] .attachment-public-consent {
+    color: #f0c89b;
+}
+
+html[data-theme="dark"] .attachment-public-consent input {
+    accent-color: #e8794e;
+}
+
+html[data-theme="dark"] .voice-message-player {
+    border-color: #536b92;
+    background: #26364f;
+    color: #e7edf7;
+}
+
+html[data-theme="dark"] .voice-message-icon,
+html[data-theme="dark"] .audio-composer-icon {
+    background: #30445e;
+    color: #a9c8fb;
+}
+
+html[data-theme="dark"] .voice-message-play {
+    background: #536dff;
+    color: #fff;
+}
+
+html[data-theme="dark"] .voice-message-play:hover:not(:disabled) {
+    background: #6d82ff;
+}
+
+html[data-theme="dark"] .voice-message-times {
+    color: #c1ccda;
+}
+
+html[data-theme="dark"] .voice-message-progress::-webkit-slider-runnable-track {
+    background: linear-gradient(
+        to right,
+        #8294ff 0,
+        #8294ff var(--voice-progress, 0%),
+        #465875 var(--voice-progress, 0%),
+        #465875 100%
+    );
+}
+
+html[data-theme="dark"] .voice-message-progress::-moz-range-track {
+    background: #465875;
+}
+
+html[data-theme="dark"] .voice-message-progress::-moz-range-progress {
+    background: #8294ff;
+}
+
+html[data-theme="dark"] .voice-message-progress::-webkit-slider-thumb,
+html[data-theme="dark"] .voice-message-progress::-moz-range-thumb {
+    border-color: #26364f;
+    background: #a9b5ff;
+}
+
+html[data-theme="dark"] .voice-message-label,
+html[data-theme="dark"] .voice-message-status,
+html[data-theme="dark"] .audio-composer-content strong {
+    color: #d7e2f0;
+}
+
+html[data-theme="dark"] .voice-message-status {
+    color: #ff9a9f;
+}
+
+html[data-theme="dark"] .message-audio-status {
+    color: #ff9a9f;
+}
+
+html[data-theme="dark"] .audio-preview-cancel {
+    border-color: #435570;
+    background: #25364e;
+    color: #d7e2f0;
+}
+
+html[data-theme="dark"] .message-sender {
+    color: #c1ccda;
+}
+
+html[data-theme="dark"] .snap-social-recent-item {
+    background: #26364a;
+    border-color: #44556e;
+    color: #e5effc;
+}
+
+html[data-theme="dark"] .ai-hub-page .ai-hub-recent {
+    border: 0;
+    background: transparent !important;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .ai-hub-page .ai-hub-section-title h2,
+html[data-theme="dark"] .ai-hub-page .snap-social-recent-heading {
+    color: #e5effc;
+}
+
+html[data-theme="dark"] .ai-hub-page .snap-social-recent-avatar {
+    background: #eef4ff;
+    color: #315fca;
+}
+
+html[data-theme="dark"] .thread-participants {
+    border-color: #40516a;
+    background: #202e42;
+}
+
+html[data-theme="dark"] .thread-info-panel-header h2 {
+    color: #e6eef9;
+}
+
+html[data-theme="dark"] .thread-info-close {
+    border-color: #40516a;
+    background: #26374b;
+    color: #e6eef9;
+}
+
+html[data-theme="dark"] .thread-info-close:hover {
+    background: #30445e;
+}
+
+html[data-theme="dark"] .thread-manage-info {
+    border-color: #40516a;
+    background: #26374b;
+    color: #b7ceff;
+}
+
+html[data-theme="dark"] .thread-group-profile {
+    border-color: #40516a;
+}
+
+html[data-theme="dark"] .thread-group-profile strong,
+html[data-theme="dark"] .thread-participant-details strong {
+    color: #e6eef9;
+}
+
+html[data-theme="dark"] .thread-group-profile small,
+html[data-theme="dark"] .thread-participants h3,
+html[data-theme="dark"] .thread-participant-details small {
+    color: #aab9cc;
+}
+
+html[data-theme="dark"] .thread-participant:hover {
+    background: #2b3c53;
+}
+
+html[data-theme="dark"] .message-stream {
+    background:
+        radial-gradient(
+            ellipse at 50% 0,
+            rgba(63, 101, 153, .2),
+            transparent 58%
+        ),
+        linear-gradient(180deg, #172438 0%, #111c2c 100%);
+    scrollbar-color: #536783 #172438;
+}
+
+html[data-theme="dark"] .thread-header,
+html[data-theme="dark"] .composer {
+    border-color: #34445b;
+}
+
+html[data-theme="dark"] .composer {
+    background: #1b293d;
+}
+
+html[data-theme="dark"] .snap-reaction-picker {
+    border-color: #435570;
+    background: #1c2738;
+}
+
+html[data-theme="dark"] .snap-reaction-picker button:hover,
+html[data-theme="dark"] .snap-reaction-picker button:focus-visible {
+    background: #30445e;
+}
+
+html[data-theme="dark"] .snap-message-reactions button {
+    border-color: #435873;
+    background: #26364c;
+    color: #e3edf8;
+}
+
+html[data-theme="dark"] .snap-message-reactions button:hover,
+html[data-theme="dark"] .snap-message-reactions button:focus-visible {
+    border-color: #5b7698;
+    background: #304762;
+}
+
+html[data-theme="dark"] .snap-message-reactions button[aria-pressed="true"] {
+    border-color: #648bd0;
+    background: #294a79;
+    color: #f3f7ff;
+}
+
+html[data-theme="dark"] .message-hover-actions {
+    border-color: #435570;
+    background: #1c2738;
+}
+
+html[data-theme="dark"] .message-hover-action,
+html[data-theme="dark"] .message-hover-action.snap-message-reaction-add {
+    color: #d7e2f0;
+}
+
+html[data-theme="dark"] .message-hover-action:hover,
+html[data-theme="dark"] .message-hover-action:focus-visible {
+    background: #30445e;
+    color: #fff;
+}
+
+html[data-theme="dark"] .message-action-menu {
+    border-color: #435570;
+    background: #1c2738;
+}
+
+html[data-theme="dark"] .message-action-menu-item {
+    color: #d7e2f0;
+}
+
+html[data-theme="dark"] .message-action-menu-item:hover,
+html[data-theme="dark"] .message-action-menu-item:focus-visible {
+    background: #30445e;
+}
+
+html[data-theme="dark"] .message-action-menu-item:disabled {
+    color: #8190a4;
+}
+
+html[data-theme="dark"] .reply-preview {
+    border-color: #40516a;
+    background: #202e42;
+}
+
+html[data-theme="dark"] .reply-preview strong {
+    color: #a9c8fb;
+}
+
+html[data-theme="dark"] .reply-preview span,
+html[data-theme="dark"] .reply-preview > button {
+    color: #c1ccda;
+}
+
+html[data-theme="dark"] .message-reply-quote,
+html[data-theme="dark"] .message-bump-quote {
+    border-left-color: #83a8df;
+    background: rgba(149, 174, 207, .14);
+}
+
+html[data-theme="dark"] .message-file {
+    border-color: #435570;
+    background: #26364a;
+    color: #cfe0f8;
+}
+
+html[data-theme="dark"] .message-file-icon {
+    background: #344a67;
+    color: #d7e6fb;
+}
+
+html[data-theme="dark"] .message-file-size,
+html[data-theme="dark"] .message-file-public-label {
+    color: #b4c7df;
+}
+
+html[data-theme="dark"] .message-file-action {
+    color: #d7e6fb;
+}
+
+html[data-theme="dark"] .message-row.outgoing .message-file {
+    border-color: rgba(255, 255, 255, 0.32);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+html[data-theme="dark"] .message-row.outgoing .message-file-icon {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+}
+
+html[data-theme="dark"] .message-row.outgoing .message-file-size,
+html[data-theme="dark"] .message-row.outgoing .message-file-public-label,
+html[data-theme="dark"] .message-row.outgoing .message-file-action {
+    color: #dce8f8;
+}
+
+html[data-theme="dark"] .message-file:hover {
+    background: #30445e;
+}
+
+html[data-theme="dark"] .message-row.outgoing .message-file:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+html[data-theme="dark"] .message-bump {
+    border-color: #435570;
+    background: #26364a;
+}
+
+html[data-theme="dark"] .message-bump-label,
+html[data-theme="dark"] .message-bump-quote {
+    color: #d7e2f0;
+}
+
+html[data-theme="dark"] .composer-attach {
+    border-color: #3b506c;
+    background: #25364e;
+    color: #a9c8fb;
+}
+
+html[data-theme="dark"] .composer-attach:hover:not(:disabled) {
+    border-color: #6286ba;
+    background: #30445e;
+    color: #fff;
+}
+
+html[data-theme="dark"] .composer-attach:disabled {
+    border-color: #34445b;
+    background: #202e42;
+    color: #7f91aa;
+}
+
+html[data-theme="dark"] #send-audio-button.is-recording {
+    border-color: #d65f6a;
+    background: #d65f6a;
+    color: #fff;
+}
+
+/* MOBILE / SMALL SCREENS */
+
+@media (max-width: 690px) {
+    .snap-social-dialog {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        max-width: none;
+        max-height: 90dvh;
+        margin: 0;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .snap-social-dialog > header {
+        padding: 23px 21px 13px;
+    }
+
+    .snap-social-choices {
+        padding: 5px 12px 25px;
+    }
+
+    .snap-social-choice {
+        min-height: 76px;
+    }
+
+    .snap-social-info {
+        padding: 8px 18px 22px;
+    }
+
+    .snap-social-confirm-status,
+    .snap-social-confirm-error {
+        margin-right: 18px;
+        margin-left: 18px;
+    }
+
+    .snap-social-confirm-actions {
+        flex-wrap: wrap;
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .snap-social-confirm-actions button {
+        flex: 1 1 120px;
+    }
+
+    .snap-social-header-new {
+        padding: 8px 12px;
+    }
+
+    .snap-social-header-info {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+}

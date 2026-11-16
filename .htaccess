@@ -1,0 +1,58 @@
+RewriteEngine On
+
+Options -Indexes
+
+RewriteRule (^|/)\.(git|history|migration-[^/]*|settings-[^/]*-backup[^/]*|vscode)(/|$) - [F,NC,L]
+RewriteRule (^|/)server(/|$) - [F,NC,L]
+RewriteRule (^|/)\.env(?:\.[^/]*)?$ - [F,NC,L]
+RewriteRule (^|/)(?:[^/]+\.)?(?:bak|backup|old|orig|sql|log|pem|key|p12|pfx)$ - [F,NC,L]
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "(?i)^(?:\.env(?:\..*)?|.*\.(?:bak|backup|old|orig|sql|log|pem|key|p12|pfx))$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    <FilesMatch "(?i)^(?:\.env(?:\..*)?|.*\.(?:bak|backup|old|orig|sql|log|pem|key|p12|pfx))$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</IfModule>
+
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/badges\.html$" "%1pages/dashboard/badges.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/dashboard\.html$" "%1pages/dashboard/dashboard.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/tasks\.html$" "%1pages/dashboard/tasks.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/ai and chat/ai\.html$" "%1pages/dashboard/ai and chat/ai.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/ai and chat/ai_and_chat\.html$" "%1pages/dashboard/ai and chat/ai_and_chat.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/ai and chat/chats\.html$" "%1pages/dashboard/ai and chat/chats.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/folders/all_folders\.html$" "%1pages/dashboard/folders/all_folders.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/folders/recently_deleted\.html$" "%1pages/dashboard/folders/recently_deleted.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/folders/unclassified\.html$" "%1pages/dashboard/folders/unclassified.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/notes/notes\.html$" "%1pages/dashboard/notes/notes.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/profile/profile\.html$" "%1pages/dashboard/profile/profile.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/profile/settings/about\.html$" "%1pages/dashboard/profile/settings/about.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/profile/settings/account_settings\.html$" "%1pages/dashboard/profile/settings/account_settings.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/profile/settings/language\.html$" "%1pages/dashboard/profile/settings/language.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/dashboard/profile/settings/notification_settings\.html$" "%1pages/dashboard/profile/settings/notification_settings.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/Login/forgot_password\.html$" "%1pages/Login/forgot_password.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/Login/login\.html$" "%1pages/Login/login.php" [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*/)pages/
+RewriteRule "^pages/Login/register\.html$" "%1pages/Login/register.php" [R=301,L]

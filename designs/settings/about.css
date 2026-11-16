@@ -1,0 +1,25 @@
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 52px;
+    padding: 6px 0;
+    border-bottom: 1px solid #edf1f5;
+}
+
+.info-item:last-child {
+    border-bottom: 0;
+}
+
+.info-item strong,
+.info-item a {
+    color: #253750;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.info-item a:hover,
+.info-item a:focus-visible {
+    color: #1d4fc1;
+}

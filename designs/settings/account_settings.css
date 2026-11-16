@@ -1,0 +1,161 @@
+.account-profile-avatar {
+    flex: 0 0 30px;
+    margin-left: auto;
+}
+
+.field-value {
+    display: block;
+    min-height: 44px;
+    padding: 13px 14px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: rgba(245, 248, 251, 0.8);
+    color: #1d2a3a;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.setting-field input,
+.setting-field select {
+    display: none;
+}
+
+.settings-card.editing .field-value {
+    display: none;
+}
+
+.settings-card.editing .setting-field input,
+.settings-card.editing .setting-field select {
+    display: block;
+}
+
+.setting-field input[hidden],
+.setting-field select[hidden] {
+    display: none !important;
+}
+
+.delete-account-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(143, 182, 219, 0.2);
+}
+
+.data-deletion-link {
+    color: #2456c4;
+    font-size: 12px;
+    font-weight: 650;
+    text-underline-offset: 3px;
+}
+
+.legal-policy-link {
+    color: #2456c4;
+    font-size: 12px;
+    font-weight: 650;
+    text-underline-offset: 3px;
+}
+
+.data-deletion-link:focus-visible {
+    outline: 3px solid rgba(48, 70, 239, 0.4);
+    outline-offset: 3px;
+}
+
+.legal-policy-link:focus-visible {
+    outline: 3px solid rgba(48, 70, 239, 0.4);
+    outline-offset: 3px;
+}
+
+html[data-theme="dark"] .data-deletion-link {
+    color: #9fc6ff;
+}
+
+html[data-theme="dark"] .legal-policy-link {
+    color: #9fc6ff;
+}
+
+.delete-button,
+.delete-confirm-button {
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 10px;
+    border: 0;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.delete-button {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.delete-confirm-button {
+    background: #b42318;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.delete-modal {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(16, 25, 39, 0.18);
+    z-index: 20;
+}
+
+.delete-modal[hidden] {
+    display: none;
+}
+
+.delete-dialog {
+    width: min(100%, 360px);
+    padding: 20px 18px 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 30px rgba(20, 35, 55, 0.18);
+}
+
+.delete-dialog h2 {
+    margin: 0 0 10px;
+    color: #101722;
+    font-size: 22px;
+    text-align: center;
+}
+
+.delete-dialog p {
+    margin: 0 0 18px;
+    color: #4f5f74;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.delete-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .delete-account-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .delete-actions {
+        flex-direction: column;
+    }
+
+    .delete-button,
+    .delete-confirm-button {
+        width: 100%;
+    }
+}

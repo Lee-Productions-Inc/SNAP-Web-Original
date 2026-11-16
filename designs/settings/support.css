@@ -1,0 +1,55 @@
+.support-card p {
+    margin: 0;
+    color: #4f5f74;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.support-card h3 {
+    margin: 0;
+    font-size: 13px;
+}
+
+.support-card a {
+    color: #1d4fc1;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.support-faq {
+    display: grid;
+    gap: 12px;
+}
+
+.faq-item {
+    display: grid;
+    gap: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(138, 167, 198, 0.35);
+}
+
+.faq-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.faq-item h3 {
+    font-size: 12px;
+}
+
+.support-card a:hover,
+.support-card a:focus-visible {
+    text-decoration: underline;
+}
+
+html[data-theme="dark"] .support-card p {
+    color: var(--snap-theme-muted);
+}
+
+html[data-theme="dark"] .support-card a {
+    color: #9fc6ff;
+}
+
+html[data-theme="dark"] .faq-item {
+    border-color: var(--snap-theme-border);
+}

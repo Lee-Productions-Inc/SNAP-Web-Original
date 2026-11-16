@@ -1,0 +1,1157 @@
+/* =========================================================
+   SNAP — RECENTLY DELETED
+========================================================= */
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.recently-deleted-main {
+
+    position: relative;
+
+    z-index: 1;
+
+    flex: 1 1 auto;
+
+    width: min(100%, 1240px);
+
+    padding: 0 28px 50px;
+
+    background: transparent;
+
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.recently-deleted-panel {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 24px 26px 30px;
+
+    border: 1px solid #e2eaf2;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+
+        0 12px 35px rgba(49, 76, 108, 0.06),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+}
+
+
+/* =========================================================
+   TITLE ROW
+========================================================= */
+
+.deleted-title-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 26px;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #e8eef5;
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.deleted-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 0;
+
+}
+
+
+.deleted-title-icon {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 54px;
+
+    height: 54px;
+
+    flex: 0 0 54px;
+
+    border-radius: 17px;
+
+    background: #f1f5fa;
+
+    color: #66788e;
+
+    font-size: 23px;
+
+}
+
+
+.deleted-eyebrow {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #94a2b2;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+
+}
+
+
+.deleted-heading h1 {
+
+    margin: 0;
+
+    color: #1f3045;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+}
+
+
+.deleted-heading p {
+
+    margin: 5px 0 0;
+
+    color: #94a1b1;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   EMPTY TRASH BUTTON
+========================================================= */
+
+.empty-trash-button {
+
+    min-height: 39px;
+
+    padding: 0 16px;
+
+    border: 1px solid #efd7d9;
+
+    border-radius: 12px;
+
+    background: #fff7f7;
+
+    color: #c45b62;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+
+        background 160ms ease,
+
+        border-color 160ms ease,
+
+        transform 160ms ease;
+
+}
+
+
+.empty-trash-button:hover:not(:disabled) {
+
+    background: #ffedef;
+
+    border-color: #e7bdc1;
+
+    transform: translateY(-1px);
+
+}
+
+
+.empty-trash-button:disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.deleted-status {
+
+    min-height: 0;
+
+    margin-bottom: 14px;
+
+    color: #8998aa;
+
+    font-size: 12px;
+
+}
+
+
+.deleted-status.success {
+
+    color: #5d8b72;
+
+}
+
+
+.deleted-status.error {
+
+    color: #bd5961;
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.deleted-loading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 220px;
+
+    color: #91a0b1;
+
+    font-size: 13px;
+
+}
+
+
+.loading-spinner {
+
+    width: 18px;
+
+    height: 18px;
+
+    border: 2px solid #dfe7ef;
+
+    border-top-color: #60758d;
+
+    border-radius: 50%;
+
+    animation: deletedSpinner 700ms linear infinite;
+
+}
+
+
+@keyframes deletedSpinner {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   NOTES GRID
+========================================================= */
+
+.deleted-notes-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 17px;
+
+}
+
+
+/* =========================================================
+   DELETED NOTE CARD
+========================================================= */
+
+.deleted-note-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 190px;
+
+    padding: 18px;
+
+    border: 1px solid #e2eaf2;
+
+    border-radius: 18px;
+
+    background: #fbfcfe;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    transition:
+
+        transform 160ms ease,
+
+        border-color 160ms ease,
+
+        box-shadow 160ms ease;
+
+}
+
+
+.deleted-note-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #cfdae6;
+
+    box-shadow:
+
+        0 10px 24px rgba(49, 76, 108, 0.08),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.deleted-note-card-top {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.deleted-note-icon {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 39px;
+
+    height: 39px;
+
+    flex: 0 0 39px;
+
+    border-radius: 12px;
+
+    background: #edf3f9;
+
+}
+
+
+.deleted-note-icon img {
+
+    width: 19px;
+
+    height: 19px;
+
+    object-fit: contain;
+
+}
+
+
+.deleted-note-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 31px;
+
+    height: 31px;
+
+    padding: 0;
+
+    border: 1px solid #e1e8ef;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #8190a1;
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+
+.deleted-note-menu:hover {
+
+    background: #f2f6fa;
+
+    color: #52667e;
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.deleted-note-title {
+
+    margin: 0 0 7px;
+
+    overflow: hidden;
+
+    color: #2a3b51;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    line-height: 1.35;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.deleted-note-preview {
+
+    display: -webkit-box;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: #8b99a9;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 3;
+
+}
+
+
+.deleted-note-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: auto;
+
+    padding-top: 17px;
+
+    color: #a0adbb;
+
+    font-size: 10px;
+
+}
+
+
+.deleted-note-meta-dot {
+
+    width: 4px;
+
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #b9c5d1;
+
+}
+
+
+/* =========================================================
+   CARD ACTIONS
+========================================================= */
+
+.deleted-note-actions {
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 10px;
+
+}
+
+
+.deleted-restore-button,
+.deleted-permanent-button {
+
+    flex: 1;
+
+    min-height: 34px;
+
+    padding: 0 9px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+}
+
+
+.deleted-restore-button {
+
+    border: 1px solid #d6e4f0;
+
+    background: #f3f8fd;
+
+    color: #4f6d89;
+
+}
+
+
+.deleted-restore-button:hover {
+
+    background: #e8f2fb;
+
+    border-color: #c6d9e9;
+
+}
+
+
+.deleted-permanent-button {
+
+    border: 1px solid #efd5d8;
+
+    background: #fff7f7;
+
+    color: #c45b62;
+
+}
+
+
+.deleted-permanent-button:hover {
+
+    background: #ffebed;
+
+    border-color: #e8b9be;
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.deleted-empty {
+
+    display: grid;
+
+    justify-items: center;
+
+    min-height: 310px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+}
+
+
+.deleted-empty-icon {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 68px;
+
+    height: 68px;
+
+    margin-bottom: 16px;
+
+    border-radius: 21px;
+
+    background: #f0f4f8;
+
+    color: #8190a1;
+
+    font-size: 28px;
+
+}
+
+
+.deleted-empty h2 {
+
+    margin: 0;
+
+    color: #34475e;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+}
+
+
+.deleted-empty p {
+
+    max-width: 360px;
+
+    margin: 8px 0 18px;
+
+    color: #98a5b4;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+.deleted-empty-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 37px;
+
+    padding: 0 16px;
+
+    border-radius: 11px;
+
+    background: #1a263e;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    text-decoration: none;
+
+}
+
+
+.deleted-empty-button:hover {
+
+    background: #263754;
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.deleted-error {
+
+    display: grid;
+
+    justify-items: center;
+
+    min-height: 240px;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+}
+
+
+.deleted-error-icon {
+
+    margin-bottom: 12px;
+
+    font-size: 27px;
+
+}
+
+
+.deleted-error strong {
+
+    color: #394d64;
+
+    font-size: 15px;
+
+}
+
+
+.deleted-error span {
+
+    max-width: 430px;
+
+    margin-top: 7px;
+
+    color: #9aa7b6;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   ACTION MODAL OVERLAY
+========================================================= */
+
+.deleted-action-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(24, 38, 58, 0.24);
+
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 180ms ease;
+
+}
+
+
+.deleted-action-overlay.is-visible {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.deleted-action-modal {
+
+    position: relative;
+
+    width: min(100%, 430px);
+
+    padding: 30px;
+
+    border: 1px solid rgba(157, 184, 214, 0.45);
+
+    border-radius: 23px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    box-shadow:
+
+        0 25px 70px rgba(49, 76, 108, 0.20),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    text-align: center;
+
+    transform: translateY(10px) scale(0.98);
+
+    transition: transform 180ms ease;
+
+}
+
+
+.deleted-action-overlay.is-visible
+.deleted-action-modal {
+
+    transform: translateY(0) scale(1);
+
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.deleted-modal-close {
+
+    position: absolute;
+
+    top: 13px;
+
+    right: 13px;
+
+    display: grid;
+
+    place-items: center;
+
+    width: 32px;
+
+    height: 32px;
+
+    padding: 0;
+
+    border: 1px solid #e0e7ef;
+
+    border-radius: 50%;
+
+    background: #f7f9fc;
+
+    color: #718196;
+
+    font-size: 21px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+}
+
+
+.deleted-modal-close:hover {
+
+    background: #edf3f9;
+
+    color: #31445e;
+
+}
+
+
+/* =========================================================
+   MODAL ICON
+========================================================= */
+
+.deleted-modal-icon {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 55px;
+
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 17px;
+
+    background: #fff0f1;
+
+    color: #c95760;
+
+    font-size: 25px;
+
+}
+
+
+/* =========================================================
+   MODAL TEXT
+========================================================= */
+
+.deleted-action-modal h2 {
+
+    margin: 0;
+
+    color: #1f3045;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+}
+
+
+.deleted-action-modal p {
+
+    margin: 8px auto 21px;
+
+    max-width: 350px;
+
+    color: #8998aa;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   MODAL BUTTONS
+========================================================= */
+
+.deleted-modal-buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 9px;
+
+}
+
+
+.deleted-cancel-button,
+.deleted-confirm-button {
+
+    min-height: 39px;
+
+    padding: 0 16px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+}
+
+
+.deleted-cancel-button {
+
+    border: 1px solid #dfe7ef;
+
+    background: #ffffff;
+
+    color: #65778d;
+
+}
+
+
+.deleted-cancel-button:hover {
+
+    background: #f5f8fb;
+
+}
+
+
+.deleted-confirm-button {
+
+    border: 0;
+
+    background: #c95760;
+
+    color: #ffffff;
+
+}
+
+
+.deleted-confirm-button:hover {
+
+    background: #b94750;
+
+}
+
+
+.deleted-confirm-button.restore-mode {
+
+    background: #1a263e;
+
+}
+
+
+.deleted-confirm-button.restore-mode:hover {
+
+    background: #263754;
+
+}
+
+
+.deleted-confirm-button:disabled {
+
+    opacity: 0.55;
+
+    cursor: wait;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .deleted-notes-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .recently-deleted-main {
+
+        padding:
+            0
+            18px
+            36px;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .deleted-title-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .empty-trash-button {
+
+        width: 100%;
+
+    }
+
+
+    .deleted-notes-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .recently-deleted-panel {
+
+        padding:
+            19px
+            16px
+            23px;
+
+        border-radius: 19px;
+
+    }
+
+
+    .deleted-heading h1 {
+
+        font-size: 21px;
+
+    }
+
+
+    .deleted-action-modal {
+
+        padding:
+            26px
+            20px;
+
+        border-radius: 20px;
+
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .deleted-note-actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .deleted-restore-button,
+    .deleted-permanent-button {
+
+        width: 100%;
+
+    }
+
+}
